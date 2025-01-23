@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shopee mall by Bannarak</title>
+        <script>
+            alert('Save 50%');
+        </script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('select').onchange = function() {
+                    var img = document.querySelector('#image');
+                    img.src = this.value + '.jpg'
+                }
+            });
+        </script>
+
+        <style>
+            #image {
+                width: 300px;  
+                height: auto;}
+
+            h1,h3{
+                color: red;}
+
+            h4{
+                color: blue;}
+        </style>        
+
+        <script>
+            let counter = 0;
+            function count() {
+                counter++;
+                document.querySelector('h3').innerHTML = counter;}
+        </script>
+
+        <script>
+            function order() {
+                const header = document.querySelector('h4');
+                if (header.innerHTML === 'Thank you for your order') {
+                    header.innerHTML = 'Ready for shipment';
+                }
+                else {
+                    header.innerHTML = 'Thank you for your order';
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <h1>Buy official football shirts from Premier League</h1>
+        <select>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="yellow">Yellow</option>
+        </select>
+        <img id="image" src="red.jpg" alt="Color Image" />
+        <h2>Select a color</h2>
+        <h3>0</h3>
+        <button onclick="count()">Add To Order</button>
+        <h4>Please confirm receipt of your order</h4>
+        <button onclick="order()">CONFIRM ORDER</button>
+    </body>
+</html>
